@@ -1,7 +1,7 @@
 
 new PerformanceObserver((list) => {
   const lcpEntry = list.getEntries().at(-1);
-  console.log('lcpEntry',lcpEntry)
+  // console.log('lcpEntry',lcpEntry)
   const navEntry = performance.getEntriesByType('navigation' )[0];
   const resEntries = performance.getEntriesByType('resource');
   const lcpResEntry = resEntries.filter((e)=>e.name===lcpEntry.url)[0]
@@ -11,7 +11,7 @@ new PerformanceObserver((list) => {
   const lcpRequestEnd = Math.max(lcpRequestStart, lcpResEntry?lcpResEntry.responseEnd:0)
   const lcpRenderTime = Math.max(lcpRequestEnd,lcpEntry?lcpEntry.startTime:0)
 
-  console.log(docTTFB)
+  // console.log(docTTFB)
   console.log('lcp',lcpRenderTime,lcpEntry.element)  
   console.log('document_ttfb',docTTFB)
   console.log('resource_load_delay',lcpRequestStart-docTTFB)

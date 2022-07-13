@@ -8,22 +8,53 @@
   <title>Document</title>
 </head>
 <body  style="display:inline">
-  <div style="display:absolute">
-    <div class="div1">11111111</div>
-    <div class="div2">2222222</div>
-    <img height="300" width="300" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2Ftp02%2F1Z9191923035R0-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1659864944&t=2ec974cbe84f5fcdd2754925207821ba">
+  <div id="container" style="display:absolute">
+    <!-- <div class="div1">1</div> -->
+    <!-- <div class="div2">22</div> -->
+    <!-- <img height="300" width="300" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2Ftp02%2F1Z9191923035R0-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1659864944&t=2ec974cbe84f5fcdd2754925207821ba">
     <img rel="preload" height="320" width="320" src="https://img0.baidu.com/it/u=3557648472,4258306012&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" loading="lazy"  alt="..." />
     <img height="450" width="450" src="https://img1.baidu.com/it/u=1729706563,727243385&fm=253&fmt=auto&app=120&f=JPEG?w=751&h=500" loading="lazy"  alt="..." />
     <img height="500" width="500" src="https://img2.baidu.com/it/u=4198192186,1776958067&fm=253&fmt=auto&app=120&f=JPEG?w=650&h=458" loading="lazy"  alt="..." />
+    <img height="500" width="500" src="https://bytedance.feishu.cn/91a82695-9e70-4034-bec4-8205df59d763" loading="lazy"  alt="..." /> -->
 
   </div>
-  
 
 </body>
 </html>
 <script type="text/javascript" src="./perf.js"></script>
 
 <script>
+
+  //对于文本节点，大小只取决于包裹的文字矩形框，与height、padding、border等无关
+  // {
+  //   let dom = document.getElementById("container")
+  //   setTimeout(() => {
+  //     const div3 = document.createElement("div"); div3.innerText='333';div3.className='div400'
+  //     dom.appendChild(div3)
+  //   }, 1000);
+  //   setTimeout(() => {
+  //     const div4 = document.createElement("div"); div4.innerText='4444'
+  //     dom.appendChild(div4)
+  //   }, 2000);
+  //   setTimeout(() => {
+  //     const div5 = document.createElement("div"); div5.innerText='55555'
+  //     dom.appendChild(div5)
+  //   }, 3000);
+  //   setTimeout(() => {
+  //     const div6 = document.createElement("div"); div6.innerText='666666'
+  //     dom.appendChild(div6)
+  //   }, 10000);
+  // }
+
+  //溢出可视区
+  {
+    let dom = document.getElementById("container")
+    setTimeout(()=>{
+      const div3 = document.createElement("div"); div3.innerText='333';div3.className='divVertical'
+      dom.appendChild(div3)
+      
+    },1000)
+  }
 
 </script>
 
@@ -37,16 +68,18 @@
     height: 100px;
     width: 100px;
     background-color: goldenrod;
+    border:  2px solid whitesmoke ;
   }
-  .div1{
-    height: 200px;
-    width: 200px;
-    background-color: tomato;
-  }
-  .div2{
-    height: 201px;
-    width: 200px;
+  .div400{
+    height: 401px;
+    width: 400px;
     background-color: turquoise;
+  }
+  .divVertical{
+    /* background-color:hotpink; */
+    width: 20px;
+    line-height: 24px;
+    font-size: 40px;
   }
   
 </style>
