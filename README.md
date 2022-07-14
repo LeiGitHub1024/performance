@@ -7,4 +7,5 @@ npm install react-router-dom@6
 
 
 # 启动 
+ca my-react-app
 npm start 

@@ -1,7 +1,7 @@
 
 new PerformanceObserver((list) => {
   const lcpEntry = list.getEntries().at(-1);
-  // console.log('lcpEntry',lcpEntry)
+  console.log('lcpEntry',lcpEntry)
   const navEntry = performance.getEntriesByType('navigation' )[0];
   const resEntries = performance.getEntriesByType('resource');
   const lcpResEntry = resEntries.filter((e)=>e.name===lcpEntry.url)[0]
