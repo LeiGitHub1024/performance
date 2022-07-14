@@ -1,24 +1,24 @@
 // import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes,Link } from 'react-router-dom'
 import Scale from './pages/scale';
 import Elements from './pages/elements';
 import Visual from './pages/Visual';
 import Time from './pages/time';
 import './perf.js'
-
 function App() {
   return (
     <div className='App'>
       <header className='Header'>
-        <div><a href='/' style={{marginLeft:10}}>Home</a></div>
-        <div><a href='/elements' style={{marginLeft:10}}>Elements</a></div>
-        <div><a href='/scale' style={{marginLeft:10}}>Scale</a></div>
-        <div><a href='/visual' style={{marginLeft:10}}>Visual</a></div>
-        <div><a href='/time' style={{marginLeft:10}}>Time</a></div>
+        
+        <div><Link to='/' style={{marginLeft:10}}>Home</Link></div>
+        <div><Link to='/elements' style={{marginLeft:10}}>Elements</Link></div>
+        <div><Link to='/scale' style={{marginLeft:10}}>Scale</Link></div>
+        <div><Link to='/visual' style={{marginLeft:10}}>Visual</Link></div>
+        <div><Link to='/time' style={{marginLeft:10}}>Time</Link></div>
       </header>
-      <body className='Content'>
-        <BrowserRouter>
+      <div className='Content'>
+        {/* <HashRouter> */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/elements" element={<Elements />} />
@@ -26,8 +26,8 @@ function App() {
             <Route path="/visual" element={<Visual />} />
             <Route path="/time" element={<Time />} />
           </Routes>
-        </BrowserRouter>
-      </body>
+        {/* </HashRouter> */}
+      </div>
     </div>
   );
 }
