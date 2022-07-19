@@ -13,3 +13,4 @@ history模式的路由失效：要么改用hash模式，要么修改nginx配置
 # 启动 
 ca my-react-app
 npm start 
+npm run build
