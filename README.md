@@ -7,7 +7,7 @@ npm install react-router-dom@6
 
 ## 发布到githubPages 注意事项
 详见：https://www.cxymm.net/article/Sophie_U/80006723
-这个页面不可见：package.json 里面加入 "homepage" : "."
+整个页面不可见：package.json 里面加入 "homepage" : "."
 history模式的路由失效：要么改用hash模式，要么修改nginx配置
 
 # 启动 
