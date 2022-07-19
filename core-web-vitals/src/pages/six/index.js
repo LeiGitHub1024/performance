@@ -1,21 +1,25 @@
 import { useState, useEffect } from 'react';
-import { Form, Input, Button, Checkbox, Image,Spin } from '@arco-design/web-react';
+import { Form, Input, Button, Checkbox, Image,Spin,Switch } from '@arco-design/web-react';
 const FormItem = Form.Item;
 
 const Six=()=>{
   const [loading1, setLoading1] = useState(true);
   const [spinLoading, setSpinLoading] = useState(true);
+  const [switchChecked, setSwitchChecked] = useState(false);
 
   useEffect(()=>{
     setTimeout(() => {setSpinLoading(false)}, 1000);
     setTimeout(() => {setLoading1(false)}, 3000);
   },[])
-  function onClickBtn1(){
-    console.log('do nothing')
+  function clickSwitch(){
+    console.log(switchChecked)
+    setTimeout(() => {
+      setSwitchChecked(p=>!p)
+    }, 1000);
   }
+  const [form] = Form.useForm();
 
   return <div>
-    <div>
     {/*
     通过一张图来展示
     FCP  随便有点什么
@@ -30,20 +34,30 @@ const Six=()=>{
     CLS  写一个button，过段时间他自己移动。 */}
 
     <div>
-      
+    <Image width={1000} src='https://raw.githubusercontent.com/LeiGitHub1024/performance/master/images/fcp.png'alt='lamp'></Image>
+
     </div>
 
-    <div style={{display:'inline-block', width: 400 }}>
+    <div style={{display:'inline-block', width: 600,margin:100,border:'solid 2px grey' }}>
     <Spin loading={spinLoading}>
-      <Form style={{width:400}}>
-        <FormItem label='Username'>
-          <Input placeholder='please enter your username...' />
+      <Form  form={form} style={{width:600}}>
+        <FormItem label='FID'>
+          <Switch checked={switchChecked} onChange={clickSwitch}/>
         </FormItem>
-        <FormItem label='Post'>
-          <Input placeholder='please enter your post...' />
+        <FormItem label='CLS' field='cls' required rules={[
+          {
+            validator(value, cb) {
+              if (value !== '铂雨yyds') {
+                return cb('必须填写铂雨yyds，必须填写铂雨yyds，必须填写铂雨yyds，必须填写铂雨yyds，必须填写铂雨yyds，必须填写铂雨yyds，必须填写铂雨yyds，必须填写铂雨yyds，必须填写铂雨yyds，必须填写铂雨yyds，必须填写铂雨yyds');
+              }
+              return cb();
+            },
+          },
+        ]}>
+          <Input placeholder='这是一个只能输入铂雨yyds的输入框' />
         </FormItem>
         <FormItem wrapperCol={{ offset: 5 }}>
-          <Checkbox>I have read the manual</Checkbox>
+          <Checkbox>I have known what is WebVitals </Checkbox>
         </FormItem>
         <FormItem wrapperCol={{ offset: 5 }}>
           <Button type='primary'loading={loading1}>Submit</Button>
@@ -52,10 +66,9 @@ const Six=()=>{
     </Spin>
     </div>
 
-
+    
         
     
-    </div>
 
   </div>
 }

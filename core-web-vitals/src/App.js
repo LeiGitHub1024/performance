@@ -13,15 +13,13 @@ function App() {
     <div className='App'>
       <header className='Header'>
         <div><Link to='/six' style={{marginLeft:10}}>Web Vitals</Link></div>
-        <div><Link to='/' style={{marginLeft:10}}>Home</Link></div>
 
 
 
-        <div><Link to='/' style={{marginLeft:10}}>Home</Link></div>
-        <div><Link to='/elements' style={{marginLeft:10}}>Elements</Link></div>
-        <div><Link to='/scale' style={{marginLeft:10}}>Scale</Link></div>
-        <div><Link to='/visual' style={{marginLeft:10}}>Visual</Link></div>
-        <div><Link to='/time' style={{marginLeft:10}}>Time</Link></div>
+        <div><Link to='/elements' style={{marginLeft:10}}>LCP-Elements</Link></div>
+        <div><Link to='/visual' style={{marginLeft:10}}>LCP-Visual</Link></div>
+        <div><Link to='/scale' style={{marginLeft:10}}>LCP-Scale</Link></div>
+        <div><Link to='/time' style={{marginLeft:10}}>LCP-Time</Link></div>
       </header>
       <div className='Content'>
           <Routes>
