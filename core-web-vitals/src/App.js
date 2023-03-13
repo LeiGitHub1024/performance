@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import { Route, Routes,Link } from 'react-router-dom'
+import { Route, Routes, Link } from 'react-router-dom'
 import Scale from './pages/scale';
 import Elements from './pages/elements';
 import Visual from './pages/Visual';
@@ -35,7 +35,7 @@ function App() {
   );
 }
 const Home = () => {
-  return <div>什么是LCP？</div>
+    return <div > 什么是LCP？ </div>
 }
 
 
